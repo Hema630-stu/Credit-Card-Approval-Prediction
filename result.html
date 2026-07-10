@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Analysis Outcomes</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f6f9; text-align: center; padding: 50px; }
+        .result-card { max-width: 500px; margin: auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .approved { color: #2ecc71; font-size: 28px; font-weight: bold; }
+        .rejected { color: #e74c3c; font-size: 28px; font-weight: bold; }
+        .back-btn { margin-top: 30px; display: inline-block; color: #7f8c8d; text-decoration: none; border: 1px solid #7f8c8d; padding: 8px 16px; border-radius: 4px; }
+        .back-btn:hover { background: #7f8c8d; color: white; }
+    </style>
+</head>
+<body>
+    <div class="result-card">
+        <h2>System Risk Output Verdict</h2>
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+        
+        {% if prediction == 1 %}
+            <p class="approved">APPROVED</p>
+            <p>Applicant fits system verification benchmarks and displays minimal predictive risk profiles.</p>
+        {% else %}
+            <p class="rejected">REJECTED / NOT APPROVED</p>
+            <p>Applicant profiles show heightened risk vectors or history parameters outside safe credit underwriting limits.</p>
+        {% endif %}
+        
+        <a href="/predict" class="back-btn">Evaluate Next Applicant</a>
+    </div>
+</body>
+</html>
