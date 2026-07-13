@@ -254,3 +254,8 @@ joblib
 
 gunicorn
 
+###Output
+
+![ScreenShot Output](output-1.png)
+
+![ScreenShot Output](output-2.png)
